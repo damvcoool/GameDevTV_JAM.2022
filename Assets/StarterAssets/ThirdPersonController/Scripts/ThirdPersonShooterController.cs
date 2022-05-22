@@ -18,6 +18,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private bool useRayCastHitTransform = false;
     [SerializeField] private Rig aimRig;
     [SerializeField] private Image crosshairs;
+    [SerializeField] private bool m_Debug = false;
 
     private StarterAssetsInputs starterAssetsInputs;
     private ThirdPersonController thirdPersonController;
@@ -47,15 +48,16 @@ public class ThirdPersonShooterController : MonoBehaviour
         }
 
 
-        if (starterAssetsInputs.aim)
+        if (starterAssetsInputs.aim || m_Debug)
         {
             aimVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetSensitivity(aimSensitivity);
             thirdPersonController.SetRotateOnMove(false);
             thirdPersonController.SetCanSprint(false);
+            thirdPersonController.SetCanJump(false);
             isAiming = true;
             aimRig.weight = Mathf.Lerp(aimRig.weight, 1f, Time.deltaTime * 20f);
-            crosshairs.CrossFadeAlpha(1f, 0.5f, false);
+            if(crosshairs != null) crosshairs.CrossFadeAlpha(1f, 0.5f, false);
             animator.SetLayerWeight(1,Mathf.Lerp(animator.GetLayerWeight(1), 1f, Time.deltaTime * 10f));
 
 
@@ -71,9 +73,10 @@ public class ThirdPersonShooterController : MonoBehaviour
             thirdPersonController.SetSensitivity(normalSensitivity);
             thirdPersonController.SetRotateOnMove(true);
             thirdPersonController.SetCanSprint(true);
+            thirdPersonController.SetCanJump(true);
             isAiming = false;
             aimRig.weight = Mathf.Lerp(aimRig.weight, 0f, Time.deltaTime * 20f);
-            crosshairs.CrossFadeAlpha(0f, 0.1f, false);
+            if (crosshairs != null) crosshairs.CrossFadeAlpha(0f, 0.1f, false);
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0f, Time.deltaTime * 10f));
             
         }

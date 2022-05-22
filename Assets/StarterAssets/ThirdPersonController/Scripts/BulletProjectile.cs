@@ -5,7 +5,12 @@ using UnityEngine;
 public class BulletProjectile : MonoBehaviour
 {
     [SerializeField] private float bulletSpeed = 10f;
+    //[SerializeField] public GameObject impactVFX;
+    //[SerializeField] public GameObject spawnVFX;
+    //[SerializeField] public AudioClip impactSFX;
+    //[SerializeField] public AudioClip spawnSFX;
     private Rigidbody bulletRigidBody;
+
 
 
     private void Awake()

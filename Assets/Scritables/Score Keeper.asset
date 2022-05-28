@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Score Keeper
   m_EditorClassIdentifier: 
   m_lives: 3
-  m_WorldSpeed: 6
-  m_MinWorldSpeed: 10
+  m_WorldSpeed: 5
+  m_MinWorldSpeed: 8
   bullets: 5
   m_Score: 0
   m_HighScore: 0

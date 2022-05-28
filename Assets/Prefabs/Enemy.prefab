@@ -60,8 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6f49d9077e50d5418abfb8712e24858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Health: 2
-  m_Value: 10
+  m_Health: 3
+  m_Value: 50
   m_Sound: {fileID: 8300000, guid: 197ba91678bb853428053bc2d8dad0ac, type: 3}
 --- !u!1 &4289716694136345362
 GameObject:

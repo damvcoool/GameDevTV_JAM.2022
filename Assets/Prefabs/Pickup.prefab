@@ -62,7 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullets: 1
   Slow: 0
-  BulletToAdd: 10
+  BulletToAdd: 5
   SlowDown: -1
   m_Sound: {fileID: 8300000, guid: 668ce40d43187254ab334b13d42dfd01, type: 3}
 --- !u!54 &1642972451712869749

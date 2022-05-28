@@ -79,5 +79,12 @@ namespace GameDevJAM
             m_AudioSource.clip = audioClip;
             m_AudioSource.Play();
         }
+        private void OnLevelWasLoaded()
+        {
+            int time = 1;
+            m_Pause = false;
+            PauseUI.SetActive(m_Pause);
+            Time.timeScale = time;
+        }
     }
 }
